@@ -29,7 +29,7 @@ const database = {
         {id: 3, name: "Nashville East", address: "8932 Nolensville Road"},
         {id: 4, name: "Nashville West", address: "1234 Charlotte Pike"},
     ],
-    order: {
+    customOrders: {
         order: [
             {id: 1,
             foodId: 1,
@@ -47,19 +47,19 @@ export const getFood = () => {
 }
 
 export const getDrinks = () => {
-    return database.drinks.map(f => ({...f}))
+    return database.drinks.map(d => ({...d}))
 }
 
 export const getFlavors = () => {
-    return database.flavors.map(f => ({...f}))
+    return database.flavors.map(fl => ({...fl}))
 }
 
 export const getToys = () => {
-    return database.toys.map(f => ({...f}))
+    return database.toys.map(t => ({...t}))
 }
 
 export const getLocations = () => {
-    return database.locations.map(f => ({...f}))
+    return database.locations.map(l => ({...l}))
 }
 
 
@@ -75,7 +75,7 @@ export const setFlavor = (id) => {
     database.transientState.flavorId = id
 }
 
-export const settoy = (id) => {
+export const setToy = (id) => {
     database.transientState.toyId = id
 }
 
@@ -92,11 +92,11 @@ export const completeOrder = () => {
     const newOrder = {...database.transientState}
 
     // Add a new primary key to the object
-    const lastIndex = database.order.order.length - 1
-    newOrder.id = database.order.order[lastIndex].id + 1
+    const lastIndex = database.customOrders.length - 1
+    newOrder.id = database.customOrders[lastIndex].id + 1
 
     // Add the new order object to custom orders state
-    database.order.order.push(newOrder) 
+    database.orders.order.push(newOrder) 
 
     // Reset the temporary state for user choices
     database.transientState = {}
