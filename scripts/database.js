@@ -29,7 +29,7 @@ const database = {
         {id: 3, name: "Nashville East", address: "8932 Nolensville Road"},
         {id: 4, name: "Nashville West", address: "1234 Charlotte Pike"},
     ],
-    customOrders: {
+    customOrders: 
         [
             {
             id: 1,
@@ -39,8 +39,8 @@ const database = {
             toyId: 1,
             locationId: 1
             }
-        ]
-    },
+        ],
+    
     transientState: {}
 }
 

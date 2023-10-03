@@ -1,4 +1,5 @@
 import { foodListFunction} from "./foodsList.js";
+import { Location } from "./location.js";
 
 
 export let forMain = () => {
@@ -8,7 +9,7 @@ return `<h1>Y'all Hungry?</h1>
 
     <section class="choices__locations options">
     
-            <!-- insert locations function  here -->
+            ${Location()}
     </section>
 
             <section class="choices__foods options">
