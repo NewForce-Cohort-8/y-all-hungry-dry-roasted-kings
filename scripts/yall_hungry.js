@@ -1,5 +1,4 @@
 import { drinksListFunction } from "./drinksList.js";
-
 import { foodListFunction } from "./foodsList.js";
 import { Flavors } from "./Flavors.js"
 import { toyListFunction } from "./toysList.js";
