@@ -79,3 +79,10 @@ if (e.target.id === 'toy') {
         document.querySelector('#selectedToy').innerText = `Selected Toy: ${selectedToyName}`;
     }
 });
+document.addEventListener('change', e => {
+    if (e.target.id === 'resource') {
+        const selectedDessert = document.querySelector('#resource');
+        const selectedDessertName = selectedDessert.options[selectedDessert.selectedIndex].text;
+        document.querySelector('#selectedFlavor').innerText = `Selected Dessert: ${selectedDessertName}`;
+    }
+});
