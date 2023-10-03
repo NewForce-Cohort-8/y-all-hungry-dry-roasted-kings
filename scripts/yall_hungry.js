@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+import { foodListFunction } from "./foodsList.js";
+import { Flavors } from "./Flavors.js"
+=======
 import { foodListFunction} from "./foodsList.js";
 import { toyListFunction } from "./toysList.js";
 
+>>>>>>> main
 
 
 export let forMain = () => {
@@ -10,12 +15,12 @@ return `<h1>Y'all Hungry?</h1>
 
     <section class="choices__locations options">
     
-            <!-- insert locations function  here -->
+    <!-- insert locations function  here -->
     </section>
 
-            <section class="choices__foods options">
+<section class="choices__foods options">
                     
-                        ${foodListFunction()}
+            ${foodListFunction()}
             </section>
 
     
@@ -25,8 +30,7 @@ return `<h1>Y'all Hungry?</h1>
                     </section>
 
                                 <section class="choices__desserts options">
-                                    
-                                                <!-- insert desserts function here -->
+                        ${Flavors()}
                                 </section>
 
                                         <section class="choices__toys options">
@@ -39,9 +43,13 @@ return `<h1>Y'all Hungry?</h1>
 
     <article class="customOrders">
 
-                                  <h3> Orders</h3>
+                                  <h3>Orders</h3>
                      <p id="selectedFood"> Selected Food: None </p>
+<<<<<<< HEAD
+                     <p id="selectedFlavor"> Selected Ice Cream Flavor:
+=======
                      <p id="selectedToy"> Selected Toy: None </p>
+>>>>>>> main
     </article>
 
 

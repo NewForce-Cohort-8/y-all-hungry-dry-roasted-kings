@@ -1,8 +1,6 @@
 import { getFood } from "./database.js";
 let foods = getFood();
 
-
-
 export let foodListFunction = () => {
     let html =""
     html += '<select name="food" id="food">'
