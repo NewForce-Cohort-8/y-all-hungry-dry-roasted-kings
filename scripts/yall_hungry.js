@@ -1,5 +1,9 @@
 import { drinksListFunction } from "./drinksList.js";
-import { foodListFunction} from "./foodsList.js";
+
+import { foodListFunction } from "./foodsList.js";
+import { Flavors } from "./Flavors.js"
+import { toyListFunction } from "./toysList.js";
+
 
 
 export let forMain = () => {
@@ -9,12 +13,12 @@ return `<h1>Y'all Hungry?</h1>
 
     <section class="choices__locations options">
     
-            <!-- insert locations function  here -->
+    <!-- insert locations function  here -->
     </section>
 
-            <section class="choices__foods options">
+<section class="choices__foods options">
                     
-                        ${foodListFunction()}
+            ${foodListFunction()}
             </section>
 
     
@@ -24,17 +28,24 @@ return `<h1>Y'all Hungry?</h1>
                     </section>
 
                                 <section class="choices__desserts options">
-                                    
-                                                <!-- insert desserts function here -->
+                        ${Flavors()}
                                 </section>
+
+                                        <section class="choices__toys options">
+                                            
+                                                        <!-- insert toys function here -->
+                                                        ${toyListFunction()}
+                                        </section>
     </article>
 
 
     <article class="customOrders">
 
-                                  <h3> Orders</h3>
+                                  <h3>Orders</h3>
                      <p id="selectedFood"> Selected Food: None </p>
                      <p id="selectedDrink"> Selected Drink: None </p>
+                     <p id="selectedFlavor"> Selected Ice Cream Flavor:
+                     <p id="selectedToy"> Selected Toy: None </p>
     </article>
 
 
@@ -59,5 +70,12 @@ document.addEventListener('change', e => {
         const selectedDrink = document.querySelector('#drinks');
         const selectedDrinkName = selectedDrink.options[selectedDrink.selectedIndex].text;
         document.querySelector('#selectedDrink').innerText = `Selected Drink: ${selectedDrinkName}`;
+    }
+});
+document.addEventListener('change', e => {    
+if (e.target.id === 'toy') {
+        const selectedToy = document.querySelector('#toy');
+        const selectedToyName = selectedToy.options[selectedToy.selectedIndex].text;
+        document.querySelector('#selectedToy').innerText = `Selected Toy: ${selectedToyName}`;
     }
 });
