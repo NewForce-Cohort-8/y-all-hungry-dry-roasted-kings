@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import { foodListFunction } from "./foodsList.js";
 import { Flavors } from "./Flavors.js"
-=======
-import { foodListFunction} from "./foodsList.js";
 import { toyListFunction } from "./toysList.js";
 
->>>>>>> main
 
 
 export let forMain = () => {
@@ -45,11 +41,8 @@ return `<h1>Y'all Hungry?</h1>
 
                                   <h3>Orders</h3>
                      <p id="selectedFood"> Selected Food: None </p>
-<<<<<<< HEAD
                      <p id="selectedFlavor"> Selected Ice Cream Flavor:
-=======
                      <p id="selectedToy"> Selected Toy: None </p>
->>>>>>> main
     </article>
 
 
