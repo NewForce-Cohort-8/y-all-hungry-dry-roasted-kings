@@ -1,3 +1,4 @@
+import { drinksListFunction } from "./drinksList.js";
 import { foodListFunction } from "./foodsList.js";
 import { Flavors } from "./Flavors.js"
 import { toyListFunction } from "./toysList.js";
@@ -22,7 +23,7 @@ return `<h1>Y'all Hungry?</h1>
     
                     <section class="choices__drinks options">
                 
-                                <!-- insert drinks function here -->
+                                ${drinksListFunction()}
                     </section>
 
                                 <section class="choices__desserts options">
@@ -41,6 +42,7 @@ return `<h1>Y'all Hungry?</h1>
 
                                   <h3>Orders</h3>
                      <p id="selectedFood"> Selected Food: None </p>
+                     <p id="selectedDrink"> Selected Drink: None </p>
                      <p id="selectedFlavor"> Selected Ice Cream Flavor:
                      <p id="selectedToy"> Selected Toy: None </p>
     </article>
@@ -63,7 +65,14 @@ document.addEventListener('change', e => {
 });
 
 document.addEventListener('change', e => {
-    if (e.target.id === 'toy') {
+    if (e.target.id === 'drinks') {
+        const selectedDrink = document.querySelector('#drinks');
+        const selectedDrinkName = selectedDrink.options[selectedDrink.selectedIndex].text;
+        document.querySelector('#selectedDrink').innerText = `Selected Drink: ${selectedDrinkName}`;
+    }
+});
+document.addEventListener('change', e => {    
+if (e.target.id === 'toy') {
         const selectedToy = document.querySelector('#toy');
         const selectedToyName = selectedToy.options[selectedToy.selectedIndex].text;
         document.querySelector('#selectedToy').innerText = `Selected Toy: ${selectedToyName}`;
