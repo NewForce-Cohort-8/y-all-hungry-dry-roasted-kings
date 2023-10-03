@@ -1,3 +1,4 @@
+import { Location } from "./location.js";
 import { drinksListFunction } from "./drinksList.js";
 import { foodListFunction } from "./foodsList.js";
 import { Flavors } from "./Flavors.js"
@@ -12,7 +13,7 @@ return `<h1>Y'all Hungry?</h1>
 
     <section class="choices__locations options">
     
-    <!-- insert locations function  here -->
+            ${Location()}
     </section>
 
 <section class="choices__foods options">
