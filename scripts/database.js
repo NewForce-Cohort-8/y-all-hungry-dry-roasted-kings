@@ -30,13 +30,15 @@ const database = {
         {id: 4, name: "Nashville West", address: "1234 Charlotte Pike"},
     ],
     customOrders: {
-        order: [
-            {id: 1,
+        [
+            {
+            id: 1,
             foodId: 1,
             drinkId: 1,
             flavorId: 1,
             toyId: 1,
-            locationId: 1}
+            locationId: 1
+            }
         ]
     },
     transientState: {}
@@ -60,6 +62,10 @@ export const getToys = () => {
 
 export const getLocations = () => {
     return database.locations.map(l => ({...l}))
+}
+
+export const getOrders = () => {
+    return database.customOrders.map(o => ({...o}))
 }
 
 
