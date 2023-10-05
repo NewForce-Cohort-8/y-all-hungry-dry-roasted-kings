@@ -5,6 +5,8 @@ import {getToysLocationStock } from "./database.js";
 import { database } from "./database.js";
 import { setLocation } from "./database.js";
 
+
+
 let toys = getToys();
 //new event listener for customOrders
 document.addEventListener("change", e => {
@@ -27,9 +29,13 @@ export let toyListFunction = () => {
     html += `<option value="0">Toys!</option>`
     html += `<option value="5">None</option>`
 
-    let toy = toys.map(x => {
-return `<option value="${x.id}"> ${x.type} </option>`
-    })
+    let toy = toys.map((toy) => {
+
+        let stockItem = database.toysLocationStock.find(
+            (item) => item.toyId === toy.id && item.locationId === selectedLocationId)
+    
+    return `<option value="${toy.id}"> ${toy.type} ${stockItem.quantity} </option>`
+    });
     
     html += toy.join("")
     html += "</select>"
