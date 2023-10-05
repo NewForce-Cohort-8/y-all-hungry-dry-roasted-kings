@@ -1,10 +1,21 @@
-import { Location } from "./location.js";
+import { foodListFunction} from "./foodsList.js";
+import { locationsListFunction } from "./locationsList.js";
 import { drinksListFunction } from "./drinksList.js";
-import { foodListFunction } from "./foodsList.js";
-import { Flavors } from "./Flavors.js"
 import { toyListFunction } from "./toysList.js";
+import { dessertsListFunction} from "./dessertsList.js"
+import { Orders } from "./orders.js";
+import {  addCustomOrder } from "./database.js";
+import { getCurrentOrder } from "./database.js";
+import {getFoodsLocationStock } from "./database.js";///probably didnt need all these but..
+import {  setLocation } from "./database.js";// added all these imports just to be safe. look at database for more context of what these imports are 
 
-
+//new event listener for customOrders
+document.addEventListener("click", (event) => {
+    if (event.target.id === "orderButton") {
+    
+        addCustomOrder();
+    }
+});
 
 export let forMain = () => {
 return `<h1>Y'all Hungry?</h1>
@@ -13,44 +24,49 @@ return `<h1>Y'all Hungry?</h1>
 
     <section class="choices__locations options">
     
-            ${Location()}
+            <!-- insert locations function  here -->
+            ${locationsListFunction()}
     </section>
 
-<section class="choices__foods options">
+            <section class="choices__foods options">
                     
-            ${foodListFunction()}
+                        ${foodListFunction()}
             </section>
 
     
                     <section class="choices__drinks options">
                 
+                                <!-- insert drinks function here -->
                                 ${drinksListFunction()}
                     </section>
-
-                                <section class="choices__desserts options">
-                        ${Flavors()}
-                                </section>
-
-                                        <section class="choices__toys options">
+                    <section class="choices__toys options">
                                             
-                                                        <!-- insert toys function here -->
-                                                        ${toyListFunction()}
-                                        </section>
+                    <!-- insert toys function here -->
+                    ${toyListFunction()}
+    </section>
+                                <section class="choices__desserts options">
+                                    
+                                                <!-- insert desserts function here -->
+                                                ${dessertsListFunction()}
+                                </section>
     </article>
 
 
     <article class="customOrders">
 
-                                  <h3>Orders</h3>
-                     <p id="selectedFood"> Selected Food: None </p>
-                     <p id="selectedDrink"> Selected Drink: None </p>
-                     <p id="selectedFlavor"> Selected Ice Cream Flavor:
-                     <p id="selectedToy"> Selected Toy: None </p>
+                                  <h3> Orders</h3>
+                     <p id="selectedLocation"> You're Picking Up Your Order at: </p>
+                     <p id="selectedFood"> Selected Food:  </p>
+                     <p id="selectedDrink"> Selected Drink: </p>
+                     <p id="selectedToy"> Selected Toy:  </p>
+                     <p id="selectedFlavor"> Selected Dessert: </p>
+                     
     </article>
 
 
     <article>
                     <button id="orderButton"> Place Order </button>
+                    ${Orders()} <!-- insert dynamic orders function here -->
     </article>
 
 
@@ -62,6 +78,37 @@ document.addEventListener('change', e => {
         const selectedFood = document.querySelector('#food');
         const selectedFoodName = selectedFood.options[selectedFood.selectedIndex].text;
         document.querySelector('#selectedFood').innerText = `Selected Food: ${selectedFoodName}`;
+    }
+});
+//new 
+//1. set location
+document.addEventListener('change', e => {
+    if (e.target.id === 'location') {
+        
+        const selectedLoc = document.querySelector('#location');
+        
+        const selectedLocId = parseInt(selectedLoc.value); //stores the location id as integer in new variable 
+        
+        const selectedLocName = selectedLoc.options[selectedLoc.selectedIndex].text;
+
+        document.querySelector('#selectedLocation').innerText = `You're Picking Up Your Order at: ${selectedLocName}`;
+
+
+        setLocation(selectedLocId);// Set the selected location in the orderBuilder using setLocation function 
+        
+        const foodsSection = document.querySelector('.choices__foods');//store targeted class area in html structure
+        foodsSection.innerHTML = foodListFunction();
+        
+        const drinksSection = document.querySelector('.choices__drinks');
+        drinksSection.innerHTML = drinksListFunction();
+
+        // Update desserts dropdown
+        const dessertsSection = document.querySelector('.choices__desserts');
+        dessertsSection.innerHTML = dessertsListFunction();
+
+        // Update toys dropdown
+        const toysSection = document.querySelector('.choices__toys');
+        toysSection.innerHTML = toyListFunction();
     }
 });
 
