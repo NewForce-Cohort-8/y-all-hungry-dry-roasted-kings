@@ -28,8 +28,9 @@ export let drinksListFunction = () => {
     html += `<option value="0">Drinks</option>`
     html += `<option value="5">None</option>`
 
-    let drink = drinks.map(x => {
-return `<option value="${x.id}"> ${x.type} </option>`
+    let drink = drinks.map(drink => {
+const stockItem = database.drinksLocationStock.find((item)=> item.drinkId === drink.id && item.locationId === selectedLocationId)
+      return `<option value="${drink.id}"> ${drink.type} (In Stock: ${stockItem.quantity})</option>`
     })
     
     html += drink.join("")

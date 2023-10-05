@@ -4,9 +4,9 @@ import { drinksListFunction } from "./drinksList.js";
 import { toyListFunction } from "./toysList.js";
 import { dessertsListFunction} from "./dessertsList.js"
 import { Orders } from "./orders.js";
-import {  addCustomOrder } from "./database.js";
+import { addCustomOrder } from "./database.js";
 import { getCurrentOrder } from "./database.js";
-import {getFoodsLocationStock } from "./database.js";///probably didnt need all these but..
+import { getFoodsLocationStock } from "./database.js";///probably didnt need all these but..
 import {  setLocation } from "./database.js";// added all these imports just to be safe. look at database for more context of what these imports are 
 
 //new event listener for customOrders
