@@ -5,3 +5,8 @@ let renderAllHTML = () => {
     mainContainer.innerHTML = forMain()
 }
 renderAllHTML()
+
+document.addEventListener("stateChanged", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    renderAllHTML()
+})
