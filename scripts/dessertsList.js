@@ -1,7 +1,7 @@
 import { getDesserts} from "./database.js"
 import { setDessert } from "./database.js";
 import { getCurrentOrder } from "./database.js";
-import {getDessertsLocationStock } from "./database.js";
+import { getDessertsLocationStock } from "./database.js";
 import { database } from "./database.js";
 import { setLocation } from "./database.js";
 
@@ -13,9 +13,6 @@ document.addEventListener("change", e => {
     }
 })
 
-
-
-
 export const dessertsListFunction = () => {
     let selectedLocationId = getCurrentOrder().locationId;
     let desserts = getDesserts();
@@ -24,18 +21,20 @@ export const dessertsListFunction = () => {
         return ItemInStock;
     })
     
-
-    
     let html = ""
     html += `<select name="flavors" id="resource">`
     html += `<option value="0">Desserts</option>`
     html += `<option value="5">None</option>`
     
-    const arrayOfOptions = desserts.map( (flavor) => {
-            return `<option value="${flavor.id}">${flavor.type}</option>`
-        }
-    )
-    html += arrayOfOptions.join("")
+    let dessert = desserts.map((dessert) => {
+        const stockItem = database.dessertsLocationStock.find(
+            (item) => item.dessertId === dessert.id && item.locationId === selectedLocationId
+        );
+
+    return `<option value="${dessert.id}"> ${dessert.type} (In stock: ${stockItem.quantity}) </option>`;
+    });
+    
+    html += dessert.join("")
     html += "</select>"
     return html
 }

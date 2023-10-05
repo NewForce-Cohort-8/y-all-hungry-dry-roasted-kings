@@ -1,0 +1,38 @@
+
+body {
+    background: rgb(185, 216, 112);
+    background-image: linear-gradient(to right, rgba(100, 198, 199, 0), rgb(124, 209, 158));
+}
+
+#header {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#toppage {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#itemchoice {
+    position: absolute;
+    bottom: 10;
+    left: 10;
+    padding-left: 350px
+}
+ 
+#orders {
+    float: right; 
+    padding-right: 375px
+}
+
+.btn-cont {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+}
+.right-btn {
+    float: right;   
+}
