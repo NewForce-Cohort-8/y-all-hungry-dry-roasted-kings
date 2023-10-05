@@ -1,54 +1,49 @@
-#container {
-  
+@import "details.css";
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
-  color: blueviolet;
-  border: 20px;
-  margin: 50px;
-  flex-direction: row;
-  border-style: dashed;
-
-}
-#customOrders{
-  align-items: center
-}
-#body{
-  color: orange;
-}
-
-body {
-    background: rgb(185, 216, 112);
-    background-image: linear-gradient(to right, rgba(100, 198, 199, 0), rgb(124, 209, 158));
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	/* font-size: 14px; */
+	line-height: 1.5;
 }
 
-#header {
-    justify-content: center;
-    align-items: center;
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0.25rem;
+}
+
+#orderButton {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
     text-align: center;
-}
-#toppage {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#itemchoice {
-    position: absolute;
-    bottom: 10;
-    left: 10;
-    padding-left: 350px
-}
- 
-#orders {
-    float: right; 
-    padding-right: 375px
+    vertical-align: middle;
+    user-select: none;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.btn-cont {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
+/* Hover effect for the button */
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border-color: #0056b3; /* Darker shade on hover */
+    color: #fff;
 }
-.right-btn {
-    float: right;   
-}
+

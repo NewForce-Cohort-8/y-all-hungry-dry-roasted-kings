@@ -34,7 +34,7 @@ export let toyListFunction = () => {
         let stockItem = database.toysLocationStock.find(
             (item) => item.toyId === toy.id && item.locationId === selectedLocationId)
     
-    return `<option value="${toy.id}"> ${toy.type} ${stockItem.quantity} </option>`
+    return `<option value="${toy.id}"> ${toy.type} - ${stockItem.quantity} Left</option>`
     });
     
     html += toy.join("")

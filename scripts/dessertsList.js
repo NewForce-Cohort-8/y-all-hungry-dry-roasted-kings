@@ -31,7 +31,7 @@ export const dessertsListFunction = () => {
             (item) => item.dessertId === dessert.id && item.locationId === selectedLocationId
         );
 
-    return `<option value="${dessert.id}"> ${dessert.type} (In stock: ${stockItem.quantity}) </option>`;
+    return `<option value="${dessert.id}"> ${dessert.type} - ${stockItem.quantity} </option>`;
     });
     
     html += dessert.join("")

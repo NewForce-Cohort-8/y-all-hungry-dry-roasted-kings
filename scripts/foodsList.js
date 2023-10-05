@@ -43,7 +43,7 @@ export let foodListFunction = () => {
     );
 
     // new
-    return `<option value="${food.id}"> ${food.type} (In Stock: ${stockItem.quantity}) </option>`;
+    return `<option value="${food.id}"> ${food.type} - ${stockItem.quantity}Left </option>`;
     });
   
     html += food.join("");

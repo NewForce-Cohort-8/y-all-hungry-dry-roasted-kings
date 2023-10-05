@@ -30,7 +30,7 @@ export let drinksListFunction = () => {
 
     let drink = drinks.map(drink => {
 const stockItem = database.drinksLocationStock.find((item)=> item.drinkId === drink.id && item.locationId === selectedLocationId)
-      return `<option value="${drink.id}"> ${drink.type} (In Stock: ${stockItem.quantity})</option>`
+      return `<option value="${drink.id}"> ${drink.type} - ${stockItem.quantity}Left</option>`
     })
     
     html += drink.join("")
