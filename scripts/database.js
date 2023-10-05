@@ -1,6 +1,6 @@
 export const database = {
     foodsLocationStock: [///i just made one foodId in stock for each Location according to Id 
-        { id: 1, foodId: 1, locationId: 1, quantity: 10 },
+        { id: 1, foodId: 1, locationId: 1, quantity: 9 },
         { id: 2, foodId: 2, locationId: 2, quantity: 10 },
         { id: 3, foodId: 3, locationId: 3, quantity: 10 },
         { id: 4, foodId: 4, locationId: 4, quantity: 10 },
