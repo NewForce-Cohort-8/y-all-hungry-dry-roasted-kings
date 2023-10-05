@@ -24,7 +24,7 @@ export let foodListFunction = () => {
     foods = foods.filter((food) => {// "food" is what the the copied foods data is called 
         //.filter is similar to .map cuz it also has a return where we can use to complete a task. aka in this case we're gonna check if the current food item is in stock at the selected location with another method called .some()
         
-      const ItemInStock = database.foodsLocationStock.some( //  ".some()" is cool cuz its also like .filter and .map : it copies an array  and the return can be a conditional. " foodsLocationStock" is an array in database and we want to  add conditional to to find in stock items
+      let ItemInStock = database.foodsLocationStock.some( //  ".some()" is cool cuz its also like .filter and .map : it copies an array  and the return can be a conditional. " foodsLocationStock" is an array in database and we want to  add conditional to to find in stock items
         (item) => item.foodId === food.id && item.locationId === selectedLocationId && item.quantity > 0
       );// 'item' is now a copied "foodsLocationStock" array. the return is the conditional successfully checking  what food is in stock by comparing "foodId" to "Id of food" AND "locationId to selcetedID 
       // Include the food item only if it's in stock at the selected location by returning .
@@ -36,8 +36,14 @@ export let foodListFunction = () => {
     html += `<option value="0">Food Items</option>`;
     html += `<option value="5">None</option>`;
   
-    let food = foods.map((food) => {
-      return `<option value="${food.id}"> ${food.type} </option>`;
+    let food = foods.map((food) => {//UPDATED RETURN FOR QUANTITY COUNT
+       // new 
+       const stockItem = database.foodsLocationStock.find(// i didnt need to use .find(), similar to .some() but .find() works with finding the first element in the copied array , so no need for "&& item.quantity > 0" in conditional
+        (item) => item.foodId === food.id && item.locationId === selectedLocationId
+    );
+
+    // new
+    return `<option value="${food.id}"> ${food.type} (In Stock: ${stockItem.quantity}) </option>`;
     });
   
     html += food.join("");
