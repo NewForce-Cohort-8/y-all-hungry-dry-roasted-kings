@@ -55,17 +55,17 @@ return `<h1>Y'all Hungry?</h1>
 
     <article class="customOrders">
 
-                                  <h3> Orders</h3>
-                     <p id="selectedLocation"> You're Picking Up Your Order at: </p>
-                     <p id="selectedFood"> Selected Food:  </p>
-                     <p id="selectedDrink"> Selected Drink: </p>
-                     <p id="selectedToy"> Selected Toy:  </p>
-                     <p id="selectedFlavor"> Selected Dessert: </p>
+                                  <h2> Orders</h2>
+                     <p id="selectedLocation">  </p>
+                     <p id="selectedFood">   </p>
+                     <p id="selectedDrink">  </p>
+                     <p id="selectedToy">  </p>
+                     <p id="selectedFlavor">  </p>
                      
     </article>
 
 
-    <article>
+    <article class="ordersList">
                     <button id="orderButton"> Place Order </button>
                     ${Orders()} <!-- insert dynamic orders function here -->
     </article>
@@ -78,7 +78,7 @@ document.addEventListener('change', e => {
     if (e.target.id === 'food') {
         const selectedFood = document.querySelector('#food');
         const selectedFoodName = selectedFood.options[selectedFood.selectedIndex].text;
-        document.querySelector('#selectedFood').innerText = `Selected Food: ${selectedFoodName}`;
+        document.querySelector('#selectedFood').innerText = ` ${selectedFoodName}`;
     }
 });
 //new 
@@ -92,7 +92,7 @@ document.addEventListener('change', e => {
         
         const selectedLocName = selectedLoc.options[selectedLoc.selectedIndex].text;
 
-        document.querySelector('#selectedLocation').innerText = `You're Picking Up Your Order at: ${selectedLocName}`;
+        document.querySelector('#selectedLocation').innerText = `You're Picking Up Your Order At Our ${selectedLocName} Location`;
 
 
         setLocation(selectedLocId);// Set the selected location in the orderBuilder using setLocation function 
@@ -117,20 +117,20 @@ document.addEventListener('change', e => {
     if (e.target.id === 'drinks') {
         const selectedDrink = document.querySelector('#drinks');
         const selectedDrinkName = selectedDrink.options[selectedDrink.selectedIndex].text;
-        document.querySelector('#selectedDrink').innerText = `Selected Drink: ${selectedDrinkName}`;
+        document.querySelector('#selectedDrink').innerText = ` ${selectedDrinkName}`;
     }
 });
 document.addEventListener('change', e => {    
 if (e.target.id === 'toy') {
         const selectedToy = document.querySelector('#toy');
         const selectedToyName = selectedToy.options[selectedToy.selectedIndex].text;
-        document.querySelector('#selectedToy').innerText = `Selected Toy: ${selectedToyName}`;
+        document.querySelector('#selectedToy').innerText = `${selectedToyName}`;
     }
 });
 document.addEventListener('change', e => {
     if (e.target.id === 'resource') {
         const selectedDessert = document.querySelector('#resource');
         const selectedDessertName = selectedDessert.options[selectedDessert.selectedIndex].text;
-        document.querySelector('#selectedFlavor').innerText = `Selected Dessert: ${selectedDessertName}`;
+        document.querySelector('#selectedFlavor').innerText = `${selectedDessertName}`;
     }
 });

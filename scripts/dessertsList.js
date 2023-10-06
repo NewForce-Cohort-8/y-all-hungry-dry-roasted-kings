@@ -23,7 +23,7 @@ export const dessertsListFunction = () => {
     
     let html = ""
     html += `<select name="flavors" id="resource">`
-    html += `<option value="0">Desserts</option>`
+    html += `<option value="0">Icecream</option>`
     html += `<option value="5">None</option>`
     
     let dessert = desserts.map((dessert) => {
@@ -31,7 +31,7 @@ export const dessertsListFunction = () => {
             (item) => item.dessertId === dessert.id && item.locationId === selectedLocationId
         );
 
-    return `<option value="${dessert.id}"> ${dessert.type} (In stock: ${stockItem.quantity}) </option>`;
+    return `<option value="${dessert.id}"> ${dessert.type} - ${stockItem.quantity} Left </option>`;
     });
     
     html += dessert.join("")

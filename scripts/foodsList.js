@@ -5,7 +5,6 @@ import {getFoodsLocationStock } from "./database.js";
 import { database } from "./database.js";
 import { setLocation } from "./database.js";
 
-let foods = getFoods();
 //new for setfood in Current Order object
 document.addEventListener("change", e => {
     if (e.target.name === "food") {
@@ -43,7 +42,7 @@ export let foodListFunction = () => {
     );
 
     // new
-    return `<option value="${food.id}"> ${food.type} (In Stock: ${stockItem.quantity}) </option>`;
+    return `<option value="${food.id}"> ${food.type} - ${stockItem.quantity} Left </option>`;
     });
   
     html += food.join("");

@@ -1,30 +1,60 @@
 export const database = {
     foodsLocationStock: [///i just made one foodId in stock for each Location according to Id 
         { id: 1, foodId: 1, locationId: 1, quantity: 9 },
-        { id: 2, foodId: 2, locationId: 2, quantity: 10 },
-        { id: 3, foodId: 3, locationId: 3, quantity: 10 },
-        { id: 4, foodId: 4, locationId: 4, quantity: 10 },
+        { id: 2, foodId: 2, locationId: 1, quantity: 23 },
+        { id: 4, foodId: 4, locationId: 1, quantity: 3 },
+        ///
+        { id: 3, foodId: 3, locationId: 2, quantity: 13 },
+        { id: 4, foodId: 4, locationId: 2, quantity: 3 },
+        //
+        { id: 2, foodId: 2, locationId: 3, quantity: 23 },
+        //
+        { id: 1, foodId: 1, locationId: 4, quantity: 9 },
+        { id: 2, foodId: 2, locationId: 4, quantity: 23 },
+        { id: 4, foodId: 4, locationId: 4, quantity: 3 },
         
     ],
-    drinksLocationStock: [///i just made one foodId in stock for each Location according to Id 
-        { id: 1, drinkId: 1, locationId: 1, quantity: 10 },
-        { id: 2, drinkId: 2, locationId: 2, quantity: 10 },
-        { id: 3, drinkId: 3, locationId: 3, quantity: 10 },
-        { id: 4, drinkId: 4, locationId: 4, quantity: 10 },
+    drinksLocationStock: [///i just made one drinkId in stock for each Location according to Id 
+        
+        { id: 3, drinkId: 3, locationId: 1, quantity: 13 },
+        { id: 4, drinkId: 4, locationId: 1, quantity: 3 },
+        ///
+        { id: 3, drinkId: 3, locationId: 2, quantity: 13 },
+        { id: 4, drinkId: 4, locationId: 2, quantity: 3 },
+        //
+        { id: 1, drinkId: 1, locationId: 3, quantity: 9 },
+        { id: 2, drinkId: 2, locationId: 3, quantity: 23 },
+        //
+        { id: 1, drinkId: 1, locationId: 4, quantity: 9 },
+        { id: 4, drinkId: 4, locationId: 4, quantity: 3 },
         
     ],
-    toysLocationStock: [///i just made one foodId in stock for each Location according to Id 
-    { id: 1, toyId: 1, locationId: 1, quantity: 10 },
-    { id: 2, toyId: 2, locationId: 2, quantity: 10 },
-    { id: 3, toyId: 3, locationId: 3, quantity: 10 },
-    { id: 4, toyId: 4, locationId: 4, quantity: 10 },
+    toysLocationStock: [///i just made one toyId in stock for each Location according to Id 
+    { id: 1, toyId: 1, locationId: 1, quantity: 9 },
+        { id: 2, toyId: 2, locationId: 1, quantity: 23 },
+        { id: 3, toyId: 3, locationId: 1, quantity: 13 },
+        { id: 4, toyId: 4, locationId: 1, quantity: 3 },
+        ///
+        { id: 4, toyId: 4, locationId: 2, quantity: 3 },
+        //
+        { id: 1, toyId: 1, locationId: 3, quantity: 9 },
+        { id: 2, toyId: 2, locationId: 3, quantity: 23 },
+        //
+        { id: 1, toyId: 1, locationId: 4, quantity: 9 },
+        { id: 2, toyId: 2, locationId: 4, quantity: 23 },
+        { id: 4, toyId: 4, locationId: 4, quantity: 3 },
     
 ],
-dessertsLocationStock: [///i just made one foodId in stock for each Location according to Id 
-    { id: 1, dessertId: 1, locationId: 1, quantity: 10 },
-    { id: 2, dessertId: 2, locationId: 2, quantity: 10 },
-    { id: 3, dessertId: 3, locationId: 3, quantity: 10 },
-    { id: 4, dessertId: 4, locationId: 4, quantity: 10 },
+dessertsLocationStock: [///i just made one dessertId in stock for each Location according to Id 
+{ id: 1, dessertId: 1, locationId: 1, quantity: 9 },
+
+{ id: 3, dessertId: 3, locationId: 2, quantity: 13 },
+{ id: 4, dessertId: 4, locationId: 2, quantity: 3 },
+//
+{ id: 1, dessertId: 1, locationId: 3, quantity: 9 },
+{ id: 2, dessertId: 2, locationId: 3, quantity: 23 },
+//
+{ id: 1, dessertId: 1, locationId: 4, quantity: 9 },
     
 ],
   foods: [
