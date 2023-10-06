@@ -1,13 +1,24 @@
 /* You need to create the rest of styles for the layout shown */
 
 .options {
-    
+        
     flex-basis: 24%;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: 2px 16px;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    font-size: 1rem;
+    line-height: 1.5;
+    /* Bootstrap's default border color */
+}
+
+/* Add some styling when the dropdown is focused */
+select:focus {
+    border-color: #007bff; /* Bootstrap's primary color */
+    outline: 0; /* Remove the default focus outline */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
 }
 
 .choices {
@@ -16,4 +27,22 @@
     
     
 
+}
+.customOrders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style the orders button */
+#orderButton {
+    margin-top: 20px; /* Add some space above the button */
+}
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the end of the container */
+    text-align: center;
 }

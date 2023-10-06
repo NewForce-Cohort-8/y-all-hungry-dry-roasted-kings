@@ -65,7 +65,7 @@ return `<h1>Y'all Hungry?</h1>
     </article>
 
 
-    <article>
+    <article class="ordersList">
                     <button id="orderButton"> Place Order </button>
                     ${Orders()} <!-- insert dynamic orders function here -->
     </article>

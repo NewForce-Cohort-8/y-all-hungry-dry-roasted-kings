@@ -8,13 +8,43 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+    color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
 	/* font-size: 14px; */
 	line-height: 1.5;
+    background: linear-gradient(45deg, #007bff, #00ff00); /* Adjust the colors as needed */
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
 }
 
-h1,h2,h3,h4,h5,h6 {
+/* Create a smooth animation for the gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+	
+}
+h1 {
+    width: 100%;
+    margin: 0; /* Remove default margin */
+    padding: 20px 0; /* Add padding for spacing, adjust as needed */
+    text-align: center; /* Center the text horizontally */
+    font-size: 4.5rem;
+    line-height: 1.2;
+    color: #007bff;
+}
+
+/* Add a subtle underline on hover */
+h1:hover {
+    text-decoration: underline;
+}
+h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
@@ -41,7 +71,7 @@ ul {
 }
 
 /* Hover effect for the button */
-.btn-primary:hover {
+#orderButton:hover {
     background-color: #0056b3; /* Darker shade on hover */
     border-color: #0056b3; /* Darker shade on hover */
     color: #fff;
