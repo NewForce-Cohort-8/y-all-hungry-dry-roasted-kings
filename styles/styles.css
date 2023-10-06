@@ -10,14 +10,13 @@ select,
 textarea {
     color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
-	/* font-size: 14px; */
 	line-height: 1.5;
-    background: linear-gradient(45deg, #007bff, #00ff00); /* Adjust the colors as needed */
+    background: linear-gradient(45deg, #007bff, #00ff00); 
     background-size: 200% 200%;
     animation: gradientAnimation 10s ease infinite;
 }
 
-/* Create a smooth animation for the gradient */
+
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -32,15 +31,15 @@ textarea {
 }
 h1 {
     width: 100%;
-    margin: 0; /* Remove default margin */
-    padding: 20px 0; /* Add padding for spacing, adjust as needed */
-    text-align: center; /* Center the text horizontally */
+    margin: 0; 
+    padding: 20px 0; 
+    text-align: center; 
     font-size: 4.5rem;
     line-height: 1.2;
     color: #007bff;
 }
 
-/* Add a subtle underline on hover */
+
 h1:hover {
     text-decoration: underline;
 }
@@ -70,10 +69,26 @@ ul {
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Hover effect for the button */
+
 #orderButton:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-    border-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3; 
+    border-color: #0056b3;
     color: #fff;
 }
+
+footer {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer p {
+    margin: 0;
+}
+
+
+
+
 
